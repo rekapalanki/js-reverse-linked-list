@@ -30,12 +30,31 @@ function listLinkedNodes(headOfList) {
 
 const linkedListHTML = `
     <div>
-        <h3>Here's our list:</h3>
-        <p>${listLinkedNodes(a)}</p>
+        <h3>Result:</h3>
+        <p>The function returns a list of consecutive linked list elements:</p>
+        <code>${listLinkedNodes(a)}</code>
     </div>
 `;
 const linkedListFragment = document.createRange().createContextualFragment(linkedListHTML);
 const linkedList = linkedListFragment.querySelector('div');
-
 const reversing = document.querySelector('#reversing');
 reversing.insertAdjacentElement('beforeend', linkedList);
+
+function reverseListHead(headOfList) {
+    const originalHead = headOfList;
+    let nextElement = originalHead.next;
+    nextElement = nextElement.next;
+    console.log(nextElement);
+    return(nextElement.value);
+}
+
+const reverseListHTML = `
+    <div>
+    <br>
+        <h3>Result of the reversal:</h3>
+        <code>${reverseListHead(a)}</code>
+    </div>
+`;
+const reverseListFragment = document.createRange().createContextualFragment(reverseListHTML);
+const reverseList = reverseListFragment.querySelector('div');
+linkedList.insertAdjacentElement('afterend', reverseList);

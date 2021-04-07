@@ -30,8 +30,14 @@
                 <p>The element of a linked list is called a <strong>node</strong>. The first element is the
                     <strong>head</strong> and the last element is the <strong>tail</strong>.
                 </p>
-                <p>Usually, programming languages doesn't include an implementation of a linked list.</p>
-                <p>Here's a sample linked list node class.</p>
+                <h3>Uses:</h3>
+                <p><strong>Stacks</strong> and <strong>queues</strong> need fast operations at the end, so linked lists
+                    are ideal to deal with.</p>
+            </article>
+            <article class="box_">
+                <h3>Sample linked list implementation</h3>
+                <p>Usually, programming languages don't include an implementation of a linked list.</p>
+                <p>Here's a sample linked list node class:</p>
                 <code><pre>
 class LinkedListNode {
     constructor(value) {
@@ -55,6 +61,20 @@ const e = new LinkedListNode(400);
                 <p id="find">Find an <a href="https://jsbin.com/polugeweyu/edit?js,console" target="_blank">initial code
                         on jsbin
                         here.</a></p>
+                <p>To iterate through our original list items we write a function. </p>
+                <code><pre>
+function listLinkedNodes(headOfList) {
+    const head = headOfList;
+    let list = [head.value];
+    let element = head;
+    while (element.next) {
+        element = element.next;
+        list.push(element.value);
+    }
+    console.log(element.next);
+    return list;
+}
+                </pre></code>
             </article>
         </div>
     </div>
