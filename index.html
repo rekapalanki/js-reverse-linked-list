@@ -47,22 +47,40 @@ class LinkedListNode {
 }</code> </pre>
                 <p>Assuming that we've created the above class we can create sample list elements.</p>
                 <code><pre>
-const a = new LinkedListNode(5);
-const b = new LinkedListNode(10);
-const c = new LinkedListNode(12);
-const d = new LinkedListNode(33);
-const e = new LinkedListNode(400);
-                </pre></code>
+    const a = new LinkedListNode(5);
+    const b = new LinkedListNode(10);
+    const c = new LinkedListNode(12);
+    const d = new LinkedListNode(33);
+    const e = new LinkedListNode(400);
+    
+    a.next = b;
+    b.next = c;
+    c.next = d;
+    d.next = e;
+</pre></code>
             </article>
-            <article class="box_" id="reversing">
+            <article class="box_">
                 <h2>Reversing the list</h2>
                 <p>In this exercise we will write a function that returns the last element of the linked list as the new
                     head of the list.</p>
                 <p id="find">Find an <a href="https://jsbin.com/polugeweyu/edit?js,console" target="_blank">initial code
                         on jsbin
                         here.</a></p>
-                <p>To iterate through our original list items we write a function. </p>
-                <code><pre>
+                <p>Try to solve the problem by yourself and come back if you get stuck.</p>
+                <button class="showSolution">Help! I got stuck</button>
+                <div class="solution hidden">
+                    <h3>Solution</h3>
+                    <p><a href="#iterating">Click here </a>to find stepped solution.</p>
+                    <p>To check your code find the <a href="https://jsbin.com/gefilug/edit?js,console,output">solution
+                            on
+                            jsbin here</a> .</p>
+                </div>
+            </article>
+            <article class="solution hidden">
+                <div id="iterating">
+                    <h3>Iterating through the original nodes</h3>
+                    <p>To iterate through our original list items we write a function. </p>
+                    <code><pre>
 function listLinkedNodes(headOfList) {
     const head = headOfList;
     let list = [head.value];
@@ -71,10 +89,27 @@ function listLinkedNodes(headOfList) {
         element = element.next;
         list.push(element.value);
     }
-    console.log(element.next);
     return list;
 }
-                </pre></code>
+                    </pre></code>
+                    <p>Based on this logic try to find the last element of the linked list independently.</p>
+                </div>
+                <div id="reversing">
+                    <h3>Return the new head of the reversed list</h3>
+                    <p>Creating a function that finds the last element of the list and returns its value.</p>
+                    <code><pre>
+function reverseListHead(headOfList) {
+    const originalHead = headOfList;
+    let nextElement = originalHead.next;
+    let previousElement = nextElement;
+    while (nextElement) {
+        previousElement = nextElement;
+        nextElement = nextElement.next;
+    }
+    return(previousElement.value);
+}
+                    </pre></code>
+                </div>
             </article>
         </div>
     </div>

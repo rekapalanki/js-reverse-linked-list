@@ -103,6 +103,7 @@ html {
   h6 {
     color: white;
     margin-top: 0;
+    padding: 2rem 0;
     line-height: 1;
     text-shadow: var(--text-shadow);
   }
@@ -123,6 +124,10 @@ html {
   .boxes {
     display: grid;
     gap: 3rem;    
+  }
+
+  .hidden {
+    display: none;
   }
   
   @media (min-width: 800px) {

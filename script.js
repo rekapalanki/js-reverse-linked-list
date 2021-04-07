@@ -31,30 +31,52 @@ function listLinkedNodes(headOfList) {
 const linkedListHTML = `
     <div>
         <h3>Result:</h3>
-        <p>The function returns a list of consecutive linked list elements:</p>
+        <p>The function returns a consecutive list of nodes:</p>
         <code>${listLinkedNodes(a)}</code>
+        <br><br>
     </div>
 `;
 const linkedListFragment = document.createRange().createContextualFragment(linkedListHTML);
 const linkedList = linkedListFragment.querySelector('div');
-const reversing = document.querySelector('#reversing');
-reversing.insertAdjacentElement('beforeend', linkedList);
+const iterating = document.querySelector('#iterating');
+iterating.insertAdjacentElement('beforeend', linkedList);
 
 function reverseListHead(headOfList) {
     const originalHead = headOfList;
     let nextElement = originalHead.next;
-    nextElement = nextElement.next;
-    console.log(nextElement);
-    return(nextElement.value);
+    let previousElement = nextElement;
+    while (nextElement) {
+        previousElement = nextElement;
+        nextElement = nextElement.next;
+    }
+    console.log(previousElement);
+    return(previousElement.value);
 }
 
 const reverseListHTML = `
     <div>
-    <br>
         <h3>Result of the reversal:</h3>
         <code>${reverseListHead(a)}</code>
+        <br><br>
     </div>
 `;
 const reverseListFragment = document.createRange().createContextualFragment(reverseListHTML);
 const reverseList = reverseListFragment.querySelector('div');
-linkedList.insertAdjacentElement('afterend', reverseList);
+const reversing = document.querySelector('#reversing');
+reversing.insertAdjacentElement('beforeend', reverseList);
+
+// Adding click event listener 
+
+const button = document.querySelector('.showSolution');
+const solution = document.querySelectorAll('.solution');
+
+
+
+const clickHandler = () => {
+    console.log('Jíííháá');
+    solution.forEach(element => {
+        element.classList.remove('hidden');
+    });
+}
+
+button.addEventListener('click', clickHandler)
