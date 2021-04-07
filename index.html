@@ -20,8 +20,40 @@
 <body>
     <div class="wrapper">
         <h1>Reverse a linked list</h1>
-        <h2>What is a linked list?</h2>
-        <p>text</p>
+        <div class="boxes">
+            <article class="box_">
+                <h2>What is a linked list?</h2>
+                <p>A linked list is a list of elements with each items storing a pointer to the next one.</p>
+                <p>Imagine the linked list like a chain of paperclips. You can add new items to each end or to the
+                    middle by
+                    disconnecting the chain.</p>
+                <p>The element of a linked list is called a <strong>node</strong>. The first element is the
+                    <strong>head</strong> and the last element is the <strong>tail</strong>.
+                </p>
+                <p>Usually, programming languages doesn't include an implementation of a linked list.</p>
+                <p>Here's a sample linked list node class.</p>
+                <code><pre>
+class LinkedListNode {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}</code> </pre>
+                <p>Assuming that we've created the above class we can create sample list elements.</p>
+                <code><pre>
+const a = new LinkedListNode(5);
+const b = new LinkedListNode(10);
+const c = new LinkedListNode(12);
+const d = new LinkedListNode(33);
+const e = new LinkedListNode(400);
+                </pre></code>
+            </article>
+            <article class="box_">
+                <h2>Reversing the list</h2>
+                <p>In this exercise we will write a function that returns the last element of the linked list as the new
+                    head of the list.</p>
+            </article>
+        </div>
     </div>
 </body>
 
